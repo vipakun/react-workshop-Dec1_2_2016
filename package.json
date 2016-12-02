@@ -10,6 +10,7 @@
     "test": "NODE_ENV=test jest",
     "update-test": "npm run test -- -u",
     "build": "webpack",
+    "cover": "npm run test -- --coverage",
     "dev": "webpack-dev-server",
     "watch": "webpack --watch"
   },
