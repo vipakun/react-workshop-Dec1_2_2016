@@ -14,7 +14,8 @@
     "dev": "webpack-dev-server",
     "watch": "webpack --watch",
     "start": "NODE_ENV=server node server.js",
-    "nodemon": "NODE_ENV=server nodemon server.js"
+    "nodemon": "NODE_ENV=server nodemon server.js",
+    "production": "NODE_ENV=production webpack -p"
   },
   "dependencies": {
     "axios": "^0.15.3",
