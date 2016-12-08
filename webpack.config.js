@@ -13,20 +13,12 @@ module.exports = {
     publicPath: '/public/',
     historyApiFallback: true
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env':{
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: true
-      }
-    })
-  ],
   resolve: {
-    extensions: ['.js', '.json']
+    extensions: ['.js', '.json'],
+    alias: {
+      react: 'preact-compat',
+      'react-dom': 'preact-compat'
+    }
   },
   stats: {
     colors: true,
@@ -46,7 +38,10 @@ module.exports = {
         loader: 'json-loader'
       },
       {
-        include: path.resolve(__dirname, 'js'),
+        include: [
+          path.resolve(__dirname, 'js'),
+          path.resolve('node_modules/preset-compat/src')
+        ],
         test: /\.js$/,
         loader: 'babel-loader'
       },
