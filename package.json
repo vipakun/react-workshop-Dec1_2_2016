@@ -12,7 +12,9 @@
     "build": "webpack",
     "cover": "npm run test -- --coverage",
     "dev": "webpack-dev-server",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "start": "NODE_ENV=server node server.js"
+    "nodemon": "NODE_ENV=server nodemon server.js"
   },
   "dependencies": {
     "axios": "^0.15.3",
